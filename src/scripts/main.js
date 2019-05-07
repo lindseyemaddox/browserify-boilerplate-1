@@ -1,8 +1,24 @@
-import sayHello from "./hello"
-import sayGoodbye from "./goodbye"
-import SandwichMaker from "./sandwichMaker"
 
-sayHello()
-sayGoodbye()
+/*
+    Author: Lindsey Maddox
+    Name: main.js
+    Purpose: Entry point of our application
+*/
 
-SandwichMaker.placeOrder("rye", "capicola", "provolone")
+import carFactory from "./createCar"
+import garage from "./createGarage"
+
+// Create two cars using the function you imported
+const mustang = carFactory("Ford", "Mustang")
+const accord = carFactory("Honda", "Accord")
+const santafe = carFactory("Hyundai", "Santa Fe")
+const sierra = carFactory("GMC", "Sierra")
+
+/// Store the cars in the garage
+garage.store(mustang)
+garage.store(accord)
+garage.store(santafe)
+garage.store(sierra)
+
+console.table(garage.inventory())
+console.table(garage.retrieve(sierra))
